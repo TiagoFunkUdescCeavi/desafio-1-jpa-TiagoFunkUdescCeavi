@@ -1,47 +1,30 @@
 package model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
-public class Jogador implements Serializable {
-
+@Table(name = "arbitro")
+public class Arbitro implements Serializable {
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id = 0L;
     
     private String nome;
-    private String posicao;
-    
-    @OneToMany( mappedBy = "Gol")
-    private List< Gol > listaGols = new ArrayList<>();
+    private String nacionalidade;
 
-    public List<Gol> getListaGols() {
-        return listaGols;
+    public Arbitro() {
     }
 
-    public void setListaGols(List<Gol> listaGols) {
-        this.listaGols = listaGols;
-    }
-
-    public Jogador() {
-    }
-
-    public Jogador(Long id, String nome, String posicao) {
-        this.id = id;
+    public Arbitro(String nome, String nacionalidade) {
         this.nome = nome;
-        this.posicao = posicao;
-    }
-
-    public Long getId() {
-        return id;
+        this.nacionalidade = nacionalidade;
     }
 
     public String getNome() {
@@ -52,12 +35,16 @@ public class Jogador implements Serializable {
         this.nome = nome;
     }
 
-    public String getPosicao() {
-        return posicao;
+    public String getNacionalidade() {
+        return nacionalidade;
     }
 
-    public void setPosicao(String posicao) {
-        this.posicao = posicao;
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public void setId(Long id) {
@@ -74,10 +61,10 @@ public class Jogador implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Jogador)) {
+        if (!(object instanceof Arbitro)) {
             return false;
         }
-        Jogador other = (Jogador) object;
+        Arbitro other = (Arbitro) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -86,7 +73,7 @@ public class Jogador implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Jogador[ id=" + id + " ]";
+        return "model.Arbitro[ id=" + id + " ]";
     }
     
 }

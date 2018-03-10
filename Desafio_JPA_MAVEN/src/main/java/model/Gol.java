@@ -5,14 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "gol")
 public class Gol implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id  = 0L;
     
     private int munitoJogo;
     private String times;
@@ -20,8 +22,7 @@ public class Gol implements Serializable {
     public Gol() {
     }
 
-    public Gol(Long id, int munitoJogo, String times) {
-        this.id = id;
+    public Gol(int munitoJogo, String times) {
         this.munitoJogo = munitoJogo;
         this.times = times;
     }

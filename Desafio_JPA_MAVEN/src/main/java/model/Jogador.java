@@ -1,31 +1,50 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
-public class Estadio implements Serializable {
+@Table(name = "jogador")
+public class Jogador implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id  = 0L;
     
     private String nome;
-    private String localizacao;
+    private String posicao;
     
-    public Estadio() {
+    @OneToMany
+    private List<Gol> listaGols = new ArrayList<>();
+
+    public List<Gol> getListaGols() {
+        return listaGols;
+    }
+
+    public void setListaGols(List<Gol> listaGols) {
+        this.listaGols = listaGols;
     }
     
-    public Estadio(Long id, String nome, String localizacao) {
-        this.id = id;
+    public Jogador() {
+    }
+
+    public Jogador(String nome, String posicao) {
         this.nome = nome;
-        this.localizacao = localizacao;
+        this.posicao = posicao;
     }
-    
+
+    public Long getId() {
+        return id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -34,18 +53,12 @@ public class Estadio implements Serializable {
         this.nome = nome;
     }
 
-    public String getLocalizacao() {
-        return localizacao;
+    public String getPosicao() {
+        return posicao;
     }
 
-    public void setLocalizacao(String localizacao) {
-        this.localizacao = localizacao;
-    }
-    
-    
-
-    public Long getId() {
-        return id;
+    public void setPosicao(String posicao) {
+        this.posicao = posicao;
     }
 
     public void setId(Long id) {
@@ -62,10 +75,10 @@ public class Estadio implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Estadio)) {
+        if (!(object instanceof Jogador)) {
             return false;
         }
-        Estadio other = (Estadio) object;
+        Jogador other = (Jogador) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -74,7 +87,9 @@ public class Estadio implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Estadio[ id=" + id + " ]";
+        return "Jogador{" + "id=" + id + ", nome=" + nome + ", posicao=" + posicao + '}';
     }
+
+    
     
 }
