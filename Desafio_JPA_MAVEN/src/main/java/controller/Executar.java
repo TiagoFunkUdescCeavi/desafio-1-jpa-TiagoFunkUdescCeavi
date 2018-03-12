@@ -5,7 +5,12 @@ import model.Clube;
 import model.Estadio;
 import model.Gol;
 import model.Jogador;
+import persistence.ArbitroDAO;
+import persistence.ClubeDAO;
 import persistence.DaoGenerico;
+import persistence.EstadioDAO;
+import persistence.GolDao;
+import persistence.JogadorDAO;
 
 public class Executar {
     
@@ -46,5 +51,25 @@ public class Executar {
         DaoGenerico.salvar( e2 );        
         
         DaoGenerico.salvar( a );
+
+        for( Gol g : GolDao.listar() ){
+            System.out.println( g.toString() );
+        }
+        
+        for( Arbitro ar : ArbitroDAO.listar() ){
+            System.out.println( ar.toString() );
+        }
+        
+        for( Jogador j : JogadorDAO.listar() ){
+            System.out.println( j.toString() );
+        }
+        
+        for( Estadio es : EstadioDAO.listar() ){
+            System.out.println( es.toString() );
+        }
+        
+        for( Clube c : ClubeDAO.listar() ){
+            System.out.println( c.toString() );
+        }
     }
 }

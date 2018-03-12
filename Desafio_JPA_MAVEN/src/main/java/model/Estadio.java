@@ -89,7 +89,7 @@ public class Estadio implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Estadio[ id=" + id + " ]";
+        return "Estadio{" + "id=" + id + ", nome=" + nome + ", localizacao=" + localizacao + ", clube=" + clube + '}';
     }
     
 }

@@ -93,7 +93,7 @@ public class Clube implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Clube[ id=" + id + " ]";
+        return "Clube{" + "id=" + id + ", nome=" + nome + ", anoFundacao=" + anoFundacao + ", listaJogadores=" + listaJogadores + '}';
     }
     
 }

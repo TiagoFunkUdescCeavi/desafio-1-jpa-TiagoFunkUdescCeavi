@@ -17,14 +17,14 @@ public class Gol implements Serializable {
     private Long id  = 0L;
     
     private int munitoJogo;
-    private String times;
+    private String time;
 
     public Gol() {
     }
 
-    public Gol(int munitoJogo, String times) {
+    public Gol(int munitoJogo, String time) {
         this.munitoJogo = munitoJogo;
-        this.times = times;
+        this.time = time;
     }
     
     public int getMunitoJogo() {
@@ -35,12 +35,12 @@ public class Gol implements Serializable {
         this.munitoJogo = munitoJogo;
     }
 
-    public String getTimes() {
-        return times;
+    public String getTime() {
+        return time;
     }
 
-    public void setTimes(String times) {
-        this.times = times;
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public Long getId() {
@@ -60,7 +60,6 @@ public class Gol implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Gol)) {
             return false;
         }
@@ -73,7 +72,7 @@ public class Gol implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Gol[ id=" + id + " ]";
+        return "Gol{" + "id=" + id + ", munitoJogo=" + munitoJogo + ", time=" + time + '}';
     }
     
 }

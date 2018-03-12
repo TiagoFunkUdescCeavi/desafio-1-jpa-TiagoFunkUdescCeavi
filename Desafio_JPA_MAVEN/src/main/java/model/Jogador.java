@@ -87,9 +87,12 @@ public class Jogador implements Serializable {
 
     @Override
     public String toString() {
-        return "Jogador{" + "id=" + id + ", nome=" + nome + ", posicao=" + posicao + '}';
+        StringBuilder sb = 
+                new StringBuilder("Jogador{" + "id=" + id + ", nome=" + nome + ", posicao=" + posicao);
+        for( Gol g : listaGols ){
+            sb.append( g.toString() );
+        }
+        return sb.toString();
     }
-
-    
     
 }

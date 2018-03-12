@@ -73,7 +73,7 @@ public class Arbitro implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Arbitro[ id=" + id + " ]";
+        return "Arbitro{" + "id=" + id + ", nome=" + nome + ", nacionalidade=" + nacionalidade + '}';
     }
     
 }

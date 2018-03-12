@@ -5,7 +5,7 @@ import javax.persistence.EntityManagerFactory;
 
 public class DaoGenerico {
     
-    private static final String nomePU = "Desafio_JPA_PU";
+    protected static final String nomePU = "Desafio_JPA_PU";
     
     public static void salvar(Object object){
         EntityManagerFactory emf = 
