@@ -1,10 +1,10 @@
 package persistence;
 
 import java.util.List;
+import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
-import model.Gol;
 import model.Jogador;
 import static persistence.DaoGenerico.nomePU;
 
@@ -18,7 +18,7 @@ public class JogadorDAO {
         return q.getResultList();
     }
     
-    public List<Jogador> buscarDebitoByTipo(String nome) {
+    public List<Jogador> buscarJogadorPeloNome(String nome) {
         EntityManagerFactory emf =
             javax.persistence.Persistence.createEntityManagerFactory( nomePU );
         EntityManager em = emf.createEntityManager();

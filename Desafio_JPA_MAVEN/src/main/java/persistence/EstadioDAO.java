@@ -17,7 +17,7 @@ public class EstadioDAO {
         return q.getResultList();
     }
     
-    public List<Estadio> buscarDebitoByTipo(String time) {
+    public List<Estadio> buscarEstadioPeloTime(String time) {
         EntityManagerFactory emf =
             javax.persistence.Persistence.createEntityManagerFactory( nomePU );
         EntityManager em = emf.createEntityManager();

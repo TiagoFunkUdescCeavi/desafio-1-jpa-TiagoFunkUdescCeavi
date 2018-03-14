@@ -17,7 +17,7 @@ public class ArbitroDAO {
         return q.getResultList();
     }
     
-    public List<Arbitro> buscarDebitoByTipo(String nome) {
+    public List<Arbitro> buscarArbitroPeloNome(String nome) {
         EntityManagerFactory emf =
             javax.persistence.Persistence.createEntityManagerFactory( nomePU );
         EntityManager em = emf.createEntityManager();

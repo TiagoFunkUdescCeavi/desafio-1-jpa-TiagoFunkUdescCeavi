@@ -16,7 +16,7 @@ public class GolDao extends DaoGenerico{
         return q.getResultList();
     }
     
-    public List<Gol> buscarDebitoByTipo(String time) {
+    public List<Gol> buscarGolPeloTime(String time) {
         EntityManagerFactory emf =
             javax.persistence.Persistence.createEntityManagerFactory( nomePU );
         EntityManager em = emf.createEntityManager();

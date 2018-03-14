@@ -18,7 +18,7 @@ public class ClubeDAO {
         return q.getResultList();
     }
     
-    public List<Clube> buscarDebitoByTipo(String nome) {
+    public List<Clube> buscarClubePeloNome(String nome) {
         EntityManagerFactory emf =
             javax.persistence.Persistence.createEntityManagerFactory( nomePU );
         EntityManager em = emf.createEntityManager();
